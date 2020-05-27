@@ -1,0 +1,460 @@
+<script>
+  // function match(string) {
+  //   let foundA = false
+  //   let foundB = false
+  //   let foundC = false
+  //   let foundD = false
+  //   let foundE = false
+  //   for (let char of string) {
+  //     if (char == 'a')
+  //       foundA = true
+  //     else if (foundA && char == 'b')
+  //       foundB = true
+  //     else if (foundB && char == 'c')
+  //       foundC = true
+  //     else if (foundC && char == 'd')
+  //       foundD = true
+  //     else if (foundD && char == 'e')
+  //       foundE = true
+  //     else if (foundD && char == 'f')
+  //       return true
+  //     else {
+  //       let foundA = false
+  //       let foundB = false
+  //       let foundC = false
+  //       let foundD = false
+  //       let foundE = false
+  //     }
+  //   }
+  //   return false
+  // }
+  // match("I aabcdefghm grood.")
+
+  // function match(string) {
+  //   let state = start
+  //   for (let char of string) {
+  //     state = state(char)
+  //   }
+  //   return state === end
+  // }
+  // function start(char) {
+  //   if (char === 'a')
+  //     return findA
+  //   else
+  //     return start
+  // }
+  // function end(char) {
+  //   return end
+  // }
+  // function findA(char) {
+  //   if (char === 'b')
+  //     return findB
+  //   else
+  //     return start(char)
+  // }
+  // function findB(char) {
+  //   if (char === 'c')
+  //     return findC
+  //   else
+  //     return start(char)
+  // }
+  // function findC(char) {
+  //   if (char === 'd')
+  //     return findD
+  //   else
+  //     return start(char)
+  // }
+  // function findD(char) {
+  //   if (char === 'e')
+  //     return findE
+  //   else
+  //     return start(char)
+  // }
+  // function findE(char) {
+  //   if (char === 'f')
+  //     return end
+  //   else
+  //     return start
+  // }
+  // console.log(match("I aabcdefghm grood."))
+  // console.log(match("I aacdefghm grood."))
+
+  // function match(string) {
+  //   let state = start
+  //   for (let char of string) {
+  //     state = state(char)
+  //   }
+  //   return state === end
+  // }
+  // function start(char) {
+  //   if (char === 'a')
+  //     return findA
+  //   else
+  //     return start
+  // }
+  // function end(char) {
+  //   return end
+  // }
+  // function findA(char) {
+  //   if (char === 'b')
+  //     return findB
+  //   else
+  //     return start(char)
+  // }
+  // function findB(char) {
+  //   if (char === 'c')
+  //     return findC
+  //   else
+  //     return start(char)
+  // }
+  // function findC(char) {
+  //   if (char === 'a')
+  //     return findA2
+  //   else
+  //     return start(char)
+  // }
+  // function findA2(char) {
+  //   if (char === 'b')
+  //     return findB2
+  //   else
+  //     return start(char)
+  // }
+  // function findB2(char) {
+  //   if (char === 'x')
+  //     return end
+  //   else
+  //     return findB(char)
+  // }
+  // console.log(match("I aabcabcabx grood."))
+  // console.log(match("I aabcabcabcabx grood."))
+  // console.log(match("I aabcabcabxabx grood."))
+  // console.log(match("I aabcabcababx grood."))
+
+
+  // function match(string) {
+  //   let state = start
+  //   for (let char of string) {
+  //     state = state(char)
+  //   }
+  //   return state === end
+  // }
+  // function start(char) {
+  //   if (char === 'a')
+  //     return findA1
+  //   else
+  //     return start
+  // }
+  // function end(char) {
+  //   return end
+  // }
+  // function findA1(char) {
+  //   if (char === 'b')
+  //     return findB1
+  //   else
+  //     return start(char)
+  // }
+  // function findB1(char) {
+  //   if (char === 'a')
+  //     return findA2
+  //   else
+  //     return start(char)
+  // }
+  // function findA2(char) {
+  //   if (char === 'b')
+  //     return findB2
+  //   else
+  //     return start(char)
+  // }
+  // function findB2(char) {
+  //   if (char === 'a')
+  //     return findA3
+  //   else
+  //     return start(char)
+  // }
+  // function findA3(char) {
+  //   if (char === 'b')
+  //     return findB3
+  //   else
+  //     return start(char)
+  // }
+  // function findB3(char) {
+  //   if (char === 'x')
+  //     return end
+  //   else
+  //     return findB2(char)
+  // }
+  // console.log(match("I aababababx grood."))
+  // console.log(match("I aabababababx grood."))
+  // console.log(match("I aababaeababx grood."))
+  // console.log(match("I aabababaabx grood."))
+
+
+  // function prefixTable(pattern, prefix, n) {
+  //   prefix[0] = 0; // prefix 初始
+  //   let len = 0; // 最长公共前后缀长度
+  //   let i = 1;
+  //   while(i < n) {
+  //     if (pattern[i] === pattern[len]) {
+  //       len ++;
+  //       prefix[i] = len;
+  //       i ++;
+  //     } else {
+  //       if (len > 0) {
+  //         len = prefix[len - 1]
+  //       }
+  //       else {
+  //         prefix[i] = len
+  //         i ++
+  //       }
+  //     }
+  //     console.log(prefix)
+  //   }
+  // }
+
+  // function movePrefixTable(prefix, n) {
+  //   for (let i = n - 1; i > 0; i --) {
+  //     prefix[i] = prefix[i - 1]
+  //   }
+  //   prefix[0] = -1
+  // }
+
+  // function kmpSearch(text, pattern) {
+  //   const patternArray = pattern.split("")
+  //   let patternLen = patternArray.length
+  //   const textArray = text.split("")
+  //   let textLen = textArray.length
+
+  //   let prefixArray = new Array(patternLen)
+  //   prefixTable(patternArray, prefixArray, patternLen)
+  //   movePrefixTable(prefixArray, patternLen)
+
+  //   // console.log('prefixTemp', prefixTemp)
+  //   console.log('prefixArray', prefixArray)
+
+  //   // textArray len m
+  //   // pattern len n
+
+  //   let i = 0, j = 0;
+  //   while(i < textLen) {
+  //     if (j === patternLen - 1 && textArray[i] === patternArray[j]) {
+  //       console.log("Found pattern at ", i - j)
+  //       j = prefixArray[j]
+  //     }
+  //     if (textArray[i] === patternArray[j]) {
+  //       i ++;
+  //       j ++;
+  //     } else {
+  //       j = prefixArray[j]
+  //       if (j === -1) {
+  //         i ++;
+  //         j ++;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // kmpSearch("ABABABABCABAAB", "ABABCABAA")
+
+  // function movePrefixTable(prefix, n) {
+  //   for (let i = n - 1; i > 0; i--) {
+  //     prefix[i] = prefix[i - 1]
+  //   }
+  //   prefix[0] = -1
+  // }
+
+  // function match(text, pattern) {
+  //   const patternArray = pattern.split("")
+  //   let patternLen = patternArray.length
+  //   const textArray = text.split("")
+  //   let textLen = textArray.length
+  //   let prefixArray = new Array(patternLen)
+
+  //   let patternState = patteranStart
+  //   prefixArray[0] = 0
+  //   let len = 0
+  //   let res = { len: 0, needAdd: true }
+  //   for (let i = 1; i < patternLen; res.needAdd && i++) {
+  //     res = patternState(i, pattern, len, prefixArray)
+  //     len = res.len
+  //   }
+
+  //   movePrefixTable(prefixArray, patternLen)
+
+
+  //   let kmpSearchRes = { iNeedAdd: false, jNeedAdd: false, isMatched: false }
+  //   for (let i = 0, j = 0; i < textLen;) {
+  //     kmpSearchRes = KMPSearch(i, j, textArray, patternArray, prefixArray, patternLen)
+  //     if (kmpSearchRes.isMatched) {
+  //       console.log("First Found pattern at ", i - j)
+  //       return kmpSearchRes.isMatched
+  //     }
+  //     if (kmpSearchRes.jNeedAdd)
+  //       j++
+  //     if (kmpSearchRes.iNeedAdd)
+  //       i++
+  //   }
+  //   return kmpSearchRes.isMatched
+  // }
+
+  // function patteranStart(i, pattern, len, prefix) {
+  //   if (pattern[i] === pattern[len]) {
+  //     len++;
+  //     prefix[i] = len;
+  //     return { len, needAdd: true };
+  //   } else {
+  //     if (len > 0) {
+  //       len = prefix[len - 1]
+  //       return { len, needAdd: false }
+  //     }
+  //     else {
+  //       prefix[i] = len
+  //       return { len, needAdd: true }
+  //     }
+  //   }
+  // }
+
+  // function KMPSearch(i, j, textArray, patternArray, prefixArray, patternLen) {
+  //   debugger
+  //   if (j === patternLen - 1 && textArray[i] === patternArray[j]) {
+  //     j = prefixArray[j]
+  //     return { iNeedAdd: false, jNeedAdd: false, isMatched: true }
+  //   }
+  //   if (textArray[i] === patternArray[j]) {
+  //     return { iNeedAdd: true, jNeedAdd: true, isMatched: false }
+  //   } else {
+  //     j = prefixArray[j]
+  //     if (j === -1) {
+  //       return { iNeedAdd: true, jNeedAdd: true, isMatched: false }
+  //     }
+  //   }
+  //   return { iNeedAdd: true, jNeedAdd: false, isMatched: false }
+  // }
+  // match("ABABABABCABAAB", "ABABCABAA")
+
+
+
+
+  let textArray = [] // 未知字符串
+  let text = ""
+  let textLen = 0 // 未知字符串长度
+  let patternArray = [] // pattern 字符串
+  let pattern = ""
+  let patternLen // 未知 pattern 长度
+  let prefixArray = null // KMP prefix table
+  let len = 0 // 最长公共前后缀长度
+
+
+  function initState() {
+    patternArray = pattern.split("")
+    patternLen = patternArray.length
+    textArray = text.split("")
+    textLen = textArray.length
+    prefixArray = new Array(patternLen)
+    prefixArray[0] = 0
+    let len = 0
+    return patteranStart
+  }
+
+
+  function patteranStart(i) {
+    if (patternArray[i] === patternArray[len]) {
+      len++;
+      prefixArray[i] = len;
+      return { needAdd: true };
+    } else {
+      if (len > 0) {
+        len = prefixArray[len - 1]
+        return { needAdd: false }
+      }
+      else {
+        prefixArray[i] = len
+        return { needAdd: true }
+      }
+    }
+    if (i ===  patternLen) {
+      return movePrefixTable
+    }
+  }
+
+
+  function movePrefixTable() {
+    for (let i = patternLen - 1; i > 0; i--) {
+      prefixArray[i] = prefixArray[i - 1]
+    }
+    prefixArray[0] = -1
+    return KMPSearch
+  }
+
+
+  function KMPSearch(i, j) {
+    if (j === patternLen - 1 && textArray[i] === patternArray[j]) {
+      j = prefixArray[j]
+      return { iNeedAdd: false, jNeedAdd: false, isMatched: true }
+    }
+    if (textArray[i] === patternArray[j]) {
+      return { iNeedAdd: true, jNeedAdd: true, isMatched: false }
+    } else {
+      j = prefixArray[j]
+      if (j === -1) {
+        return { iNeedAdd: true, jNeedAdd: true, isMatched: false }
+      }
+    }
+    return { iNeedAdd: true, jNeedAdd: false, isMatched: false }
+  }
+  
+  const STATUS_MAP = {
+    "init": initState,
+    "prefixtable": patteranStart,
+    "movePrefixTable": movePrefixTable,
+    "KMPSearch": KMPSearch
+  }
+
+  function match(_text, _pattern) {
+    text = _text
+    pattern = _pattern
+
+    let patternState = initState
+    let STATUS_MAP_KEYS = Object.keys(STATUS_MAP)
+
+    for (let status = 0; status < STATUS_MAP_KEYS.length; status++) {
+      patternState = STATUS_MAP[STATUS_MAP_KEYS[status]]
+      if (STATUS_MAP_KEYS[status] === "init") {
+
+        patternState()
+
+      } else if (STATUS_MAP_KEYS[status] === "prefixtable") {
+
+        let res = { len: 0, needAdd: true }
+        for (let i = 1; i <= patternLen; res.needAdd && i++) {
+          res = patternState(i)
+        }
+
+      } else if (STATUS_MAP_KEYS[status] === "movePrefixTable") {
+
+        patternState()
+
+      } else if (STATUS_MAP_KEYS[status] === "KMPSearch") {
+
+        let kmpSearchRes = { iNeedAdd: false, jNeedAdd: false, isMatched: false }
+        for (let i = 0, j = 0; i < textLen;) {
+          kmpSearchRes = patternState(i, j)
+          if (kmpSearchRes.isMatched) {
+            console.log("First Found pattern at ", i - j)
+            return kmpSearchRes.isMatched
+          }
+          if (kmpSearchRes.iNeedAdd)
+            i++
+          if (kmpSearchRes.jNeedAdd)
+            j++
+        }
+        return kmpSearchRes.isMatched
+
+      }
+    }
+  }
+
+  match("ABABABABCABAAB", "ABABCABAA")
+
+
+
+</script>
